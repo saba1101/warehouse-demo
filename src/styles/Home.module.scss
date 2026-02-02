@@ -1,0 +1,268 @@
+.wrapper {
+  flex: 1;
+  min-height: 100vh;
+  padding: 2rem 2.5rem 3rem;
+  overflow-y: auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      $common-orange,
+      $common-green,
+      transparent
+    );
+    border-radius: 2px;
+    opacity: 0.9;
+  }
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    135deg,
+    $common-white 0%,
+    rgba($common-white, 0.85) 50%,
+    rgba($common-orange, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: rgba($common-white, 0.7);
+  font-weight: 400;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.guideBands {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.band {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background: rgba($common-black, 0.4);
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease, border-left-color 0.2s ease;
+
+  &:nth-child(odd) {
+    flex-direction: row;
+
+    .bandIcon {
+      order: 0;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row;
+
+    .bandContent {
+      align-items: flex-start;
+    }
+
+    .bandList {
+      padding-left: 0;
+      padding-right: 1.25rem;
+    }
+  }
+
+  &:hover {
+    background: rgba($common-dark-overlay, 0.5);
+  }
+}
+
+.bandStart {
+  border-left-color: $common-green;
+
+  &:hover {
+    border-left-color: #6de8b8;
+  }
+}
+
+.bandWarehouse {
+  border-left-color: $common-orange;
+
+  &:hover {
+    border-left-color: #ff9a6d;
+  }
+}
+
+.bandCars {
+  border-left-color: #6495ed;
+
+  &:hover {
+    border-left-color: #8baff5;
+  }
+}
+
+.bandTrade {
+  border-left-color: $common-red;
+
+  &:hover {
+    border-left-color: #e83d7a;
+  }
+}
+
+.bandIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  background: rgba($common-white, 0.06);
+}
+
+.bandContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.bandTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $common-white;
+  margin: 0;
+}
+
+.bandBody {
+  color: rgba($common-white, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.bandList {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  color: rgba($common-white, 0.78);
+  font-size: 0.88rem;
+  line-height: 1.65;
+
+  li {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.flowSection {
+  margin-top: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flowTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba($common-white, 0.9);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.flowSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flowStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  @include glassy-background;
+  border-radius: 12px;
+  border: 1px solid rgba($common-white, 0.05);
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba($common-green, 0.2);
+  }
+}
+
+.flowNumber {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $common-green, #c95a2e);
+  color: $common-white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.flowContent {
+  flex: 1;
+  strong {
+    color: $common-white;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    color: rgba($common-white, 0.78);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
+
+.cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba($common-green, 0.12),
+    rgba($common-green, 0.04)
+  );
+  border: 1px solid rgba($common-green, 0.25);
+}
+
+.ctaText {
+  font-size: 1rem;
+  color: rgba($common-white, 0.9);
+  margin: 0;
+}
+
+.ctaHighlight {
+  color: $common-green;
+  font-weight: 600;
+}

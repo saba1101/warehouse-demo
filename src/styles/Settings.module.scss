@@ -1,0 +1,340 @@
+.wrapper {
+  flex: 1;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2.5rem;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $common-white;
+  margin: 0 0 1rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba($common-white, 0.9);
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profileCard {
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba($common-white, 0.06);
+  background: linear-gradient(
+    165deg,
+    rgba($common-dark-overlay, 0.5) 0%,
+    rgba($common-black, 0.7) 100%
+  );
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.avatarBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatarWrap {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba($common-grey, 0.5);
+  border: 2px solid rgba($common-white, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba($common-white, 0.4);
+}
+
+.avatarLabel {
+  cursor: pointer;
+}
+
+.avatarButton {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba($common-white, 0.3);
+  background: rgba($common-black, 0.4);
+  color: rgba($common-white, 0.9);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: rgba($common-orange, 0.2);
+    border-color: rgba($common-orange, 0.5);
+  }
+}
+
+.avatarInput {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formBlock {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba($common-white, 0.9);
+  display: block;
+}
+
+.input {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.2);
+  background: rgba($common-black, 0.5);
+  color: $common-white;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: rgba($common-white, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $common-orange;
+  }
+}
+
+.saveButton {
+  align-self: flex-start;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, $common-orange, #c95a2e);
+  color: $common-white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba($common-orange, 0.35);
+  }
+}
+
+.backgroundCard {
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba($common-white, 0.06);
+  background: linear-gradient(
+    165deg,
+    rgba($common-dark-overlay, 0.5) 0%,
+    rgba($common-black, 0.7) 100%
+  );
+}
+
+.backgroundHint {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: rgba($common-white, 0.75);
+}
+
+.backgroundUploadRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.backgroundUploadLabel {
+  cursor: pointer;
+}
+
+.backgroundUploadButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.3);
+  background: rgba($common-black, 0.4);
+  color: rgba($common-white, 0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: rgba($common-orange, 0.2);
+    border-color: rgba($common-orange, 0.5);
+  }
+}
+
+.backgroundUploadInput {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backgroundRemoveButton {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-red, 0.5);
+  background: rgba($common-red, 0.15);
+  color: $common-white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: rgba($common-red, 0.3);
+    border-color: $common-red;
+  }
+}
+
+.backgroundCustomPreview {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.backgroundCustomLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba($common-white, 0.8);
+}
+
+.backgroundCustomThumb {
+  width: 100%;
+  max-width: 280px;
+  height: 120px;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.15);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba($common-black, 0.5);
+}
+
+.backgroundPresetsLabel {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba($common-white, 0.75);
+}
+
+.backgroundOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.backgroundOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba($common-white, 0.15);
+  background: rgba($common-black, 0.4);
+  color: rgba($common-white, 0.9);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: rgba($common-orange, 0.5);
+    background: rgba($common-white, 0.06);
+  }
+
+  &.backgroundOptionActive {
+    border-color: $common-orange;
+    background: rgba($common-orange, 0.15);
+  }
+}
+
+.backgroundPreview {
+  width: 56px;
+  height: 36px;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba($common-white, 0.2);
+}
+
+.backgroundLabel {
+  display: block;
+}
+
+.accountCard {
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba($common-red, 0.3);
+  background: rgba($common-red, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dangerText {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba($common-white, 0.85);
+  line-height: 1.5;
+}
+
+.restartButton {
+  align-self: flex-start;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-red, 0.6);
+  background: rgba($common-red, 0.25);
+  color: $common-white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: rgba($common-red, 0.4);
+    border-color: $common-red;
+  }
+}

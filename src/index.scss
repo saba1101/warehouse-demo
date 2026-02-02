@@ -1,0 +1,53 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: $common-black;
+  color: $common-white;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(91deg, #0c141a, #1d1d1d, #12181c);
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: solid 1px $common-grey;
+  background: rgba($common-grey, 0.5);
+  color: $common-white;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  &:focus {
+    border: solid 1px $common-green;
+  }
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $common-white;
+}
+button {
+  width: auto;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: none;
+  color: $common-white;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,194 @@
+.wrapper {
+  flex: 1;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2.5rem;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $common-white;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba($common-white, 0.75);
+  line-height: 1.45;
+}
+
+.section {
+  margin-top: 0.5rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: rgba($common-white, 0.6);
+  font-size: 1rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.offerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.offerCard {
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba($common-white, 0.08);
+  background: linear-gradient(
+    165deg,
+    rgba($common-dark-overlay, 0.5) 0%,
+    rgba($common-black, 0.7) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: rgba($common-orange, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.offerHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.offerUserName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $common-orange;
+}
+
+.offerMessage {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba($common-white, 0.85);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.offerCars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba($common-black, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba($common-white, 0.06);
+}
+
+.offerCarBlock {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.offerCarLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba($common-white, 0.55);
+}
+
+.offerCarName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $common-white;
+}
+
+.offerCarMeta {
+  font-size: 0.85rem;
+  color: rgba($common-white, 0.65);
+}
+
+.offerArrow {
+  font-size: 1.5rem;
+  color: rgba($common-orange, 0.8);
+  flex-shrink: 0;
+}
+
+.offerDiff {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.offerDiffEven {
+  color: $common-green;
+}
+
+.offerDiffPay {
+  color: #ff6b8a;
+}
+
+.offerDiffGain {
+  color: $common-green;
+}
+
+.offerActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.offerDecline {
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.3);
+  background: transparent;
+  color: rgba($common-white, 0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: rgba($common-white, 0.08);
+    border-color: rgba($common-white, 0.5);
+  }
+}
+
+.offerAccept {
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, $common-green, #3da88a);
+  color: $common-white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba($common-green, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

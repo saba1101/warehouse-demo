@@ -1,0 +1,504 @@
+.wrapper {
+  flex: 1;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2.5rem;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $common-white;
+  margin: 0 0 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba($common-white, 0.2);
+  background: rgba($common-black, 0.5);
+  color: rgba($common-white, 0.9);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+
+  &:hover {
+    background: rgba($common-orange, 0.2);
+    border-color: rgba($common-orange, 0.5);
+  }
+
+  &.active {
+    background: $common-orange;
+    border-color: $common-orange;
+    color: $common-black;
+  }
+}
+
+.sortCondition {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.12);
+  background: rgba($common-black, 0.5);
+  color: $common-white;
+  font-size: 0.9rem;
+
+  &::placeholder {
+    color: rgba($common-white, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $common-orange;
+  }
+}
+
+.viewToggle {
+  display: flex;
+  gap: 0.25rem;
+  border-radius: 10px;
+  padding: 3px;
+  background: rgba($common-black, 0.5);
+  border: 1px solid rgba($common-white, 0.12);
+}
+
+.viewButton {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba($common-white, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    color: $common-white;
+    background: rgba($common-white, 0.08);
+  }
+
+  &.viewActive {
+    background: $common-orange;
+    color: $common-black;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba($common-dark-overlay, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba($common-white, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba($common-orange, 0.3);
+  }
+}
+
+.cardImage {
+  height: 140px;
+  background: linear-gradient(
+    145deg,
+    rgba($common-grey, 0.4) 0%,
+    rgba($common-black, 0.8) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  &::before {
+    content: "🚗";
+    font-size: 3.5rem;
+    opacity: 0.6;
+  }
+}
+
+.cardBadges {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.conditionBadge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &.excellent {
+    background: rgba($common-green, 0.35);
+    color: $common-green;
+  }
+  &.good {
+    background: rgba(100, 149, 237, 0.35);
+    color: #8baff5;
+  }
+  &.fair {
+    background: rgba($common-orange, 0.35);
+    color: $common-orange;
+  }
+  &.poor {
+    background: rgba($common-red, 0.3);
+    color: #ff6b8a;
+  }
+}
+
+.sellerBadge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba($common-white, 0.12);
+  color: rgba($common-white, 0.9);
+}
+
+.cardBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $common-white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardMeta {
+  font-size: 0.85rem;
+  color: rgba($common-white, 0.65);
+  margin: 0;
+}
+
+.cardPrice {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: $common-green;
+  margin: 0.25rem 0 0;
+  letter-spacing: -0.02em;
+}
+
+.cardPriceLabel {
+  font-size: 14px;
+  color: rgba($common-white, 0.5);
+  font-weight: 400;
+  margin-top: 0.15rem;
+}
+
+.buyButton {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid $common-green;
+  background: transparent;
+  color: $common-white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba($common-orange, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: rgba($common-white, 0.6);
+  font-size: 1rem;
+}
+
+// List view
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba($common-dark-overlay, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba($common-white, 0.06);
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: rgba($common-orange, 0.25);
+    background: rgba($common-dark-overlay, 0.75);
+  }
+}
+
+.listImage {
+  width: 100px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba($common-grey, 0.4) 0%,
+    rgba($common-black, 0.8) 100%
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "🚗";
+    font-size: 1.75rem;
+    opacity: 0.6;
+  }
+}
+
+.listRow .conditionBadge,
+.listRow .sellerBadge {
+  position: absolute;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.listRow .conditionBadge {
+  top: 4px;
+  left: 4px;
+}
+
+.listRow .sellerBadge {
+  bottom: 4px;
+  right: 4px;
+}
+
+.listBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.listTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $common-white;
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
+}
+
+.listMeta {
+  font-size: 0.8rem;
+  color: rgba($common-white, 0.6);
+  margin: 0;
+}
+
+.listPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.listPriceValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $common-green;
+}
+
+.list .cardPriceLabel {
+  font-size: 0.7rem;
+  margin-top: 0.1rem;
+}
+
+.buyButtonList {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, $common-orange, #c95a2e);
+  color: $common-black;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s, box-shadow 0.15s;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba($common-orange, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Buy car modal (warehouse selector)
+.buyModal {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buyModalMessage {
+  margin: 0;
+  font-size: 1rem;
+  color: $common-white;
+  font-weight: 600;
+}
+
+.buyModalBalance {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba($common-white, 0.85);
+}
+
+.buyModalFull {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #ff6b8a;
+  font-weight: 600;
+}
+
+.buyModalLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba($common-white, 0.9);
+  margin: 0 0 0.35rem;
+}
+
+.buyModalSelect {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba($common-white, 0.2);
+  background: rgba($common-black, 0.5);
+  color: $common-white;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: $common-orange;
+  }
+
+  option {
+    background: $common-dark-overlay;
+    color: $common-white;
+  }
+}
+
+.buyModalActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.buyModalCancel {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba($common-white, 0.3);
+  background: transparent;
+  color: $common-white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba($common-white, 0.1);
+  }
+}
+
+.buyModalConfirm {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, $common-orange, #c95a2e);
+  color: $common-black;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba($common-orange, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

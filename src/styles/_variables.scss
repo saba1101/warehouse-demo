@@ -1,0 +1,14 @@
+$common-black: #0d0d0f;
+$common-white: #eeeeee;
+$common-green: #4ecca3;
+$common-grey: #393e46;
+$common-red: #dd105e;
+$common-orange: #ff7844;
+$common-dark-overlay: #0e1c26;
+
+@mixin glassy-background {
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
