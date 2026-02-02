@@ -76,6 +76,24 @@ export const Sidebar = ({ onResetUser }) => {
             </p>
           </div>
         </div>
+        {/* Mobile: profile + balance in bottom bar */}
+        <div className={styles.userStatsMobile}>
+          <div className={styles.userAvatarMobile}>
+            {userDataProfile?.profileImage && (
+              <img alt="" src={userDataProfile.profileImage} />
+            )}
+          </div>
+          <div className={styles.userDetailsMobile}>
+            <p className={styles.userNameMobile}>
+              {userDataProfile?.userName ?? "—"}
+            </p>
+            <p className={styles.userBalanceMobile}>
+              {userDataProfile?.balance != null
+                ? `$${Number(userDataProfile.balance).toLocaleString()}`
+                : "—"}
+            </p>
+          </div>
+        </div>
         <nav className={styles.navigation} aria-label="Main">
           <ul className={styles.navList}>
             {navigationItems.map((item) => {

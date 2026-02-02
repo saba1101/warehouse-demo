@@ -3,6 +3,14 @@
   min-height: 100vh;
   padding: 1.5rem 2rem 2.5rem;
   overflow-y: auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0.75rem;
+  }
 }
 
 .header {

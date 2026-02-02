@@ -3,6 +3,14 @@
   min-height: 100vh;
   padding: 2rem 2.5rem 3rem;
   overflow-y: auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1.25rem 1rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 1rem 0.75rem;
+  }
 }
 
 .hero {

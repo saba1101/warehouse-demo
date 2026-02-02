@@ -38,7 +38,11 @@
   .modalContent {
     min-width: 300px;
     width: auto;
+    max-width: calc(100vw - 2rem);
     min-height: 200px;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    margin: 1rem;
     background: rgba($common-dark-overlay, 1);
     border-radius: 10px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);

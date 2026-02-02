@@ -13,6 +13,16 @@
   background: linear-gradient(91deg, #0c141a, #1d1d1d, #12181c);
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
 input {
   width: 100%;
   padding: 12px 16px;
